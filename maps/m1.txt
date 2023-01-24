@@ -1,5 +1,5 @@
-G G G G G G G G G G G G G G G G G G G G G G G G G
-G G G G G G G G G G G G G G G G G G G G G G G G G
+W W W W W W W W W W W W W W W W W W W W W W W W W
+W G G G T T T W W W W W W W W W W W W W W W W W W
 G G G G G G G G G G G G G G G G G G G G G G G G G
 G G G G G G G G G G G G G G G G G G G G G G G G G
 G G G G G G G G G G G G G G G G G G G G G G G T T
@@ -13,13 +13,13 @@ G G G G G G G G G G G G G G G G G G G G G G G G G
 G G G G G G G G G G G G G G G G G G G G G G G G G
 G G G G G G G G G G G G G G G G G G G G G G G G G
 G G G G G G G G G G G G G G G G G G G G G G G G G
-G G G G G G G G G G G G G G G G G G G G G G G G G
+G G G G G G G G G G G G G G G G T T T T T T G G G
 G G G G G G G G G G G G G G T T T T T T G G G G T
+G G G G G G G G G G G G G G G G T T T T T G G G G
 G G G G G G G G G G G G G G G G G G G G G G G G G
+G G G G G G G G G G G G G T T T T T G G G G G G T
+G G G G G G G G G G G G G T T T T T G G G G G G G
+G G G G G G G G G G G G G G T T T T T G G G G G G
 G G G G G G G G G G G G G G G G G G G G G G G G G
-G G G G G G G G G G G G G G G G G G G G G G G G G
-G G G G G G G G G G G G G G G G G G G G G G G G G
-G G G G G G G G G G G G G G G G G G G G G G G G G
-G G G G G G G G G G G G G G G G G G G G G G G G G
-G G G G G G G G G G G G G G G G G G G G G G G G G
+G G G G G G G G G G G G G G G G G G T T T G G G G
 G G G G G G G G G G G G G G G G G G G G G G G G G X
