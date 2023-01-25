@@ -2,7 +2,6 @@ import math
 import pygame
 from configurations import *
 from player import Player
-from game_play import GameState
 
 map_tile_image = {
     #images from image folder
@@ -20,7 +19,7 @@ class PLAY:
         #constructor variables
         self.screen = screen
         self.objects = []
-        self.game_state = GameState.N
+        self.game_state = 0
         self.map = []
         self.camera = [0, 0]
 
@@ -29,7 +28,7 @@ class PLAY:
         player = Player(1, 1)
         self.player = player
         self.objects.append(player)
-        self.game_state = GameState.R
+        self.game_state = 1
         self.load("m1")
 
     def update_events(self):
@@ -43,11 +42,11 @@ class PLAY:
         for event in pygame.event.get():
             #quit using escape button
             if event.type == pygame.QUIT:
-                self.game_state = GameState.E
+                self.game_state = 2
             #movement keys
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    self.game_state = GameState.E
+                    self.game_state = 2
                 elif event.key == pygame.K_w: # up
                     self.move(self.player, [0, -1])
                 elif event.key == pygame.K_s: # down
