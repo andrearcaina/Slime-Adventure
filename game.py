@@ -1,18 +1,18 @@
 import math
 import pygame
-import configurations
+from configurations import *
 from player import Player
 from game_play import GameState
 
 map_tile_image = {
     #images from image folder
-    "G": pygame.transform.scale(pygame.image.load("images/grass.png"), (configurations.SCALE,configurations.SCALE)),
-    "W": pygame.transform.scale(pygame.image.load("images/water.png"), (configurations.SCALE,configurations.SCALE)),
-    "T": pygame.transform.scale(pygame.image.load("images/tree.png"), (configurations.SCALE,configurations.SCALE)),
-    "S": pygame.transform.scale(pygame.image.load("images/statue.png"), (configurations.SCALE,configurations.SCALE)),
-    "P": pygame.transform.scale(pygame.image.load("images/path.png"), (configurations.SCALE,configurations.SCALE)),
-    "B": pygame.transform.scale(pygame.image.load("images/bridge.png"), (configurations.SCALE,configurations.SCALE)), #bridge
-    "H": pygame.transform.scale(pygame.image.load("images/building.png"), (configurations.SCALE,configurations.SCALE)), #hut/building
+    "G": pygame.transform.scale(pygame.image.load("images/grass.png"), (SCALE,SCALE)),
+    "W": pygame.transform.scale(pygame.image.load("images/water.png"), (SCALE,SCALE)),
+    "T": pygame.transform.scale(pygame.image.load("images/tree.png"), (SCALE,SCALE)),
+    "S": pygame.transform.scale(pygame.image.load("images/statue.png"), (SCALE,SCALE)),
+    "P": pygame.transform.scale(pygame.image.load("images/path.png"), (SCALE,SCALE)),
+    "B": pygame.transform.scale(pygame.image.load("images/bridge.png"), (SCALE,SCALE)), #bridge
+    "H": pygame.transform.scale(pygame.image.load("images/building.png"), (SCALE,SCALE)), #hut/building
 }
 
 class PLAY:
@@ -33,7 +33,7 @@ class PLAY:
         self.load("m1")
 
     def update_events(self):
-        self.screen.fill(configurations.BLACK)
+        self.screen.fill(BLACK)
         self.key_events()
         self.generate(self.screen)
         for object in self.objects:
@@ -43,11 +43,11 @@ class PLAY:
         for event in pygame.event.get():
             #quit using escape button
             if event.type == pygame.QUIT:
-                self.game_state = GameState.ENDED
+                self.game_state = GameState.E
             #movement keys
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    self.game_state = GameState.ENDED
+                    self.game_state = GameState.E
                 elif event.key == pygame.K_w: # up
                     self.move(self.player, [0, -1])
                 elif event.key == pygame.K_s: # down
@@ -82,11 +82,11 @@ class PLAY:
         character.movement(new)
 
     def camera_movement(self):
-        MAX_Y = len(self.map) - configurations.SCREEN_HEIGHT / configurations.SCALE
-        Y = self.player.pos[1] - math.ceil(round(configurations.SCREEN_HEIGHT/ configurations.SCALE / 2))
+        MAX_Y = len(self.map) - SCREEN_HEIGHT / SCALE
+        Y = self.player.pos[1] - math.ceil(round(SCREEN_HEIGHT/ SCALE / 2))
 
-        MAX_X = len(self.map) - configurations.SCREEN_WIDTH / configurations.SCALE
-        X = self.player.pos[0] - math.ceil(round(configurations.SCREEN_WIDTH/ configurations.SCALE / 2))
+        MAX_X = len(self.map) - SCREEN_WIDTH / SCALE
+        X = self.player.pos[0] - math.ceil(round(SCREEN_WIDTH/ SCALE / 2))
 
         if X <= MAX_X and X >= 0:
             self.camera[0] = X
@@ -118,7 +118,7 @@ class PLAY:
             x = 0
             for j in i:
                 image = map_tile_image[j]
-                rect = pygame.Rect(x * configurations.SCALE - (self.camera[0]*configurations.SCALE), y * configurations.SCALE - (self.camera[1] * configurations.SCALE), configurations.SCALE, configurations.SCALE)
+                rect = pygame.Rect(x * SCALE - (self.camera[0]*SCALE), y * SCALE - (self.camera[1] * SCALE), SCALE, SCALE)
                 screen.blit(image, rect)
                 x += 1
             y += 1
