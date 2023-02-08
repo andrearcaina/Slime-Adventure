@@ -14,24 +14,24 @@ map_tile_image = {
     "H": pygame.transform.scale(pygame.image.load("images/building.png"), (SCALE,SCALE)), #hut/building
 }
 
-class PLAY:
+class Play:
     def __init__(self, screen):
         #constructor variables
         self.screen = screen
         self.objects = []
-        self.game_state = 0
+        self.mode = 0
         self.map = []
         self.camera = [0, 0]
 
-    def create_system(self):
+    def startup(self):
         #create player, append to object list (for player and others), load map
         player = Player(1, 1)
         self.player = player
         self.objects.append(player)
-        self.game_state = 1
+        self.mode = 1
         self.load("m1")
 
-    def update_events(self):
+    def run(self):
         self.screen.fill(BLACK)
         self.key_events()
         self.generate(self.screen)
@@ -42,11 +42,11 @@ class PLAY:
         for event in pygame.event.get():
             #quit using escape button
             if event.type == pygame.QUIT:
-                self.game_state = 2
+                self.mode = 2
             #movement keys
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
-                    self.game_state = 2
+                    self.mode = 2
                 elif event.key == pygame.K_w: # up
                     self.move(self.player, [0, -1])
                 elif event.key == pygame.K_s: # down

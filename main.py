@@ -1,14 +1,25 @@
 import pygame
 from configurations import *
-from game import PLAY
+from game import Play
+from menu import Menu
 
 pygame.init()
 pygame.display.set_caption("Something Pokemon Gmae")
-game = PLAY(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)))
-game.create_system()
+game = Play(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)))
+menu = Menu(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)), game)
 clock = pygame.time.Clock()
 
-while game.game_state == 1:
+# 0 = menu
+# 1 = game
+# 2 = quit
+
+while game.mode != 2: 
     clock.tick(60)
-    game.update_events()
+    
+    if game.mode == 0:
+        menu.run()
+
+    if game.mode == 1:
+        game.run()
+
     pygame.display.flip()
