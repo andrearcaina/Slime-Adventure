@@ -58,10 +58,10 @@ class Game:
         self.found(tile)
 
     def found(self, tile):
-        numb = rng(1,10)
+        numb = rng(1,20)
         print(numb)
 
-        if numb <= 1: #10% chance
+        if numb <= 1: #5% chance
             founded = self.creation.create(tile)
             print("you found a Pokemon!")
             print("Pokemon Type: " + founded.type)

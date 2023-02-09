@@ -23,10 +23,8 @@ class Battle:
     def update(self):
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                self.game.mode = 2
+                print("dont even try quitting the game")
             #     handle key events
             elif event.type == pygame.KEYDOWN:
-                if event.key == pygame.K_ESCAPE:
-                    self.game.mode = 2
                 if event.key == pygame.K_SPACE:
                     self.pokemon.hp -= 1
