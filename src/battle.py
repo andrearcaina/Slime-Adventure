@@ -1,5 +1,5 @@
 import pygame
-from configurations import *
+from config import *
 
 class Battle:
     def __init__(self, screen, pokemon, player):

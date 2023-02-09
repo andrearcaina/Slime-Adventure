@@ -1,7 +1,6 @@
 import pygame
-from configurations import *
+from config import *
 from math import ceil
-from support import rng
 
 map_tile_image = {
     #images from image folder

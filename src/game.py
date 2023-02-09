@@ -1,6 +1,6 @@
 import pygame
 from support import *
-from configurations import *
+from config import *
 
 from player import Player
 from make_pokemon import Creation
