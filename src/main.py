@@ -4,7 +4,7 @@ from game import Game
 from menu import Menu
 
 pygame.init()
-pygame.display.set_caption("Tiled Pokemon Game")
+pygame.display.set_caption("Slime Adventures!")
 game = Game(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)))
 menu = Menu(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)), game)
 clock = pygame.time.Clock()

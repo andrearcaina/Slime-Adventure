@@ -1,4 +1,4 @@
-from support import rng 
+from support import * 
 from pokemon import Pokemon
 
 class Creation:

@@ -1,6 +1,5 @@
 import pygame
 from configurations import *
-from support import rng
 
 class Battle:
     def __init__(self, screen, pokemon, player):
@@ -18,7 +17,7 @@ class Battle:
         img = font.render("HP: " + str(self.pokemon.hp) + " ATK: " + str(self.pokemon.atk), True, BLACK)
         self.screen.blit(img, (20, 120))
 
-        img = font.render("press c to attack!", True, BLACK)
+        img = font.render("press space to attack!", True, BLACK)
         self.screen.blit(img, (20, 220))
         
     def update(self):
@@ -29,5 +28,5 @@ class Battle:
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     self.game.mode = 2
-                if event.key == pygame.K_c:
+                if event.key == pygame.K_SPACE:
                     self.pokemon.hp -= 1

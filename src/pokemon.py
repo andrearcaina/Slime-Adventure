@@ -1,5 +1,4 @@
 import pygame
-from support import rng
 
 class Pokemon:
     def __init__(self,type,id):

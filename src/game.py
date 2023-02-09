@@ -1,5 +1,5 @@
 import pygame
-from support import rng
+from support import *
 from configurations import *
 
 from player import Player
