@@ -9,4 +9,4 @@ class Pokemon:
         self.atk = 10
         self.count = 0
         self.id = id
-        self.image = pygame.image.load("images/pokemon/" + f"{self.id:03d}" + ".png")
+        self.img = pygame.image.load("images/pokemon/" + f"{self.id:03d}" + ".png")

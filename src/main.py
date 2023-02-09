@@ -1,11 +1,11 @@
 import pygame
 from configurations import *
-from game import Play
+from game import Game
 from menu import Menu
 
 pygame.init()
-pygame.display.set_caption("Something Pokemon Gmae")
-game = Play(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)))
+pygame.display.set_caption("Tiled Pokemon Game")
+game = Game(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)))
 menu = Menu(pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT)), game)
 clock = pygame.time.Clock()
 

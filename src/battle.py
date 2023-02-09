@@ -10,9 +10,9 @@ class Battle:
 
     def render(self):
         self.screen.fill(WHITE)
-        rect = pygame.Rect(1, 1, 2, 2)
-        self.screen.blit(self.pokemon.image, rect)
-        self.screen.blit(self.player.image, (320, 40))
+        rect = pygame.Rect(320, 20, 2, 2)
+        self.screen.blit(self.pokemon.img, rect)
+        self.screen.blit(self.player.img, (20, 320))
 
         font = pygame.font.SysFont(None, 24)
         img = font.render("HP: " + str(self.pokemon.hp) + " ATK: " + str(self.pokemon.atk), True, BLACK)

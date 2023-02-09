@@ -18,7 +18,7 @@ map_tile_image = {
 class Map:
     def __init__(self,screen):
         self.screen = screen
-        self.map_arr = []
+        self.array = []
         self.camera = [0,0]
 
     def load(self, f):
@@ -27,13 +27,13 @@ class Map:
                 l = []
                 for j in range(0, len(i) - 1, 2):
                     l.append(i[j])
-                self.map_arr.append(l)
+                self.array.append(l)
 
     def generate(self, screen, player, objects):
         self.camera_movement(player)
 
         y = 0
-        for i in self.map_arr:
+        for i in self.array:
             x = 0
             for j in i:
                 image = map_tile_image[j]
@@ -43,13 +43,15 @@ class Map:
             y += 1
 
         for object in objects:
-            object.render(self.screen, self.camera)
+            object.render(self.screen, self.camera) #uses render method() from player to generate/render the player
     
     def camera_movement(self, player):
-        MAX_Y = len(self.map_arr) - SCREEN_HEIGHT / SCALE
+        #camera movement in the y direction
+        MAX_Y = len(self.array) - SCREEN_HEIGHT / SCALE
         Y = player.pos[1] - ceil(round(SCREEN_HEIGHT/ SCALE / 2))
 
-        MAX_X = len(self.map_arr) - SCREEN_WIDTH / SCALE
+        #camera movement in the x direction
+        MAX_X = len(self.array) - SCREEN_WIDTH / SCALE
         X = player.pos[0] - ceil(round(SCREEN_WIDTH/ SCALE / 2))
 
         if X <= MAX_X and X >= 0:
