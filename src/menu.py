@@ -9,8 +9,7 @@ class Menu:
     def run(self):
         self.img = pygame.image.load("images/menu.png")
         self.screen.fill(BLACK)
-        rect = pygame.Rect(1, 1, 2, 2)
-        self.screen.blit(self.img, rect)
+        self.screen.blit(self.img, pygame.Rect(1, 1, 2, 2))
 
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
